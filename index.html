@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Иван Нохрин | Портфолио</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Rubik+Mono+One|Cuprum" rel="stylesheet">
+	<link rel="stylesheet" href="jquery.fullPage.css" />
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<header>
+		<div class="card">
+			<h1>Иван Нохрин</h1>
+			<div id="sub">junior frontend developer</div>
+		</div>
+	  <ul id="menu">
+	    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Навыки</a></li>
+	    <li data-menuanchor="secondPage"><a href="#secondPage">Примеры работ</a></li>
+	    <li data-menuanchor="thirdPage" id="trigger"><a href="#thirdPage">Контакты</a></li>
+	  </ul>
+	</header>
+<div id="fullpage">
+	<div class="section" id="section0">
+		<div class="content">
+			<div class="motto">
+			  Добрый день!<br> Я занимаюсь адаптивной вёрсткой,<br>
+				главным принципом для меня является:<br> не гнаться за эффектной презентацией в ущерб <br>&nbsp;&ndash; кроссбраузерности, <br>&nbsp;&ndash; производительности, <br>&nbsp;&ndash; читаемости контента.<br><br>
+				Не стоит забывать, что меньше &mdash; это <b>больше</b>.
+			</div>
+		</div>
+		<div class="techlist">
+			<div class="tech html5logo">
+			</div>
+			<div class="tech css3logo">
+			</div>
+			<div class="tech sasslogo">
+			</div>
+			<div class="tech bemlogo">
+			</div>
+			<div class="tech javascriptlogo">
+			</div>
+			<div class="tech jquerylogo">
+			</div>
+			<div class="tech gimplogo">
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section1">
+			<div class="content">
+        <div class="cardsgallery">
+					<div class="galleryitem">
+
+					</div>
+					<div class="galleryitem">
+
+					</div>
+					<div class="galleryitem">
+
+					</div>
+        </div>
+			</div>
+	</div>
+	<div class="section" id="section2">
+		<div class="content">
+			<div class="phonebox">
+				<img src="img/phone.jpg" id="phone" alt="">
+			</div>
+      <div class="contacts">
+      	+7 908 051 08 90 <br>
+				coffeeaddict@yandex.ru
+      </div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<script type="text/javascript" src="jquery.fullPage.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+			menu: '#menu',
+			anchors:['firstPage', 'secondPage', 'thirdPage']
+		});
+	});
+</script>
+
+</body>
+</html>
