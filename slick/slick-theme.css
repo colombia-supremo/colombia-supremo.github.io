@@ -46,6 +46,7 @@
     line-height: 1.5vw;
     opacity: .85;
     color: #1a1a1a;
+    transform: rotate(0.001deg);
 }
 
 .slick-prev
@@ -135,7 +136,8 @@
     height: 1.5vw;
     content: "\f10c";
     opacity: .85;
-    color: #1a1a1a;
+    color: #1a1a1a;    
+    transform: rotate(0.001deg);
 }
 
 .slick-dots li.slick-active button:before

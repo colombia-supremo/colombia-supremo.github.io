@@ -64,8 +64,14 @@ a:hover {
 }
 
 .card h1 {
-  font-family: 'Rubik Mono One', sans-serif;
+  font-family: 'Lobster', sans-serif;
+  font-size: 4vh;
   border-bottom: 1px solid grey;
+}
+
+#sub {
+  font-size: 2vh;
+  text-align: center;
 }
 
 #menu {
@@ -210,6 +216,12 @@ a:hover {
   background-repeat: no-repeat;
 }
 
+.item2 {
+  background-image: url("img/portfolio-heavy-machinery.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .galleryitem__image:after {
   content: "";
   display: block;
@@ -226,6 +238,12 @@ a:hover {
 
 .galleryitem__text a {
   color: #3399ff;
+  font-size: 2.5vh;
+}
+
+.galleryitem__text h2 {
+  font-family: 'Lobster', sans-serif;
+  font-size: 3vh;
 }
 
 .coffee {
