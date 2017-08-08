@@ -120,7 +120,7 @@ a:hover {
   font-weight: bold;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
 
   .icon {
     display: block;
@@ -193,11 +193,13 @@ a:hover {
 
 
 .skillslist {
+  flex: 1 1 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   list-style-type: disc;
   list-style-position: inside;
+  width: 100%;
 }
 
 .skillslist li {
@@ -252,7 +254,7 @@ a:hover {
 
 .jquerylogo {
   background-image: url("img/jquery.svg");
-  width: 8em;
+  width: 6em;
 }
 
 .jquerylogo:after {
@@ -542,7 +544,7 @@ a:hover {
   font-size: 2em;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
   #section0 .content{
     position: absolute;
     padding-top: 3em;
@@ -557,10 +559,16 @@ a:hover {
     width: 100%;
     padding: 1em;
     font-size: 1em;
+    align-items: center;
+    justify-content: center;
   }
 
   .welcome {
     text-align: center;
+  }
+
+  .skillslist {
+    align-items: center;
   }
 
   .techlist{
@@ -635,14 +643,14 @@ a:hover {
     height: 50%;
     width: 100%;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
   }
 
   .phonebox {
     flex: 1 0 auto;
     height: 50%;
-    width: 100%;
+    width: 90%;
     background-image: url("img/dial.jpg");
     background-size: contain;
     background-repeat: no-repeat;
