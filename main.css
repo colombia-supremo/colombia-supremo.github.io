@@ -193,12 +193,13 @@ a:hover {
 
 
 .skillslist {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   list-style-type: disc;
   list-style-position: inside;
+  justify-content: flex-start;
   width: 100%;
 }
 
@@ -560,7 +561,7 @@ a:hover {
     padding: 1em;
     font-size: 1em;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .welcome {
@@ -640,7 +641,6 @@ a:hover {
 
   .contacts {
     flex: 1 0 auto;
-    height: 50%;
     width: 100%;
     padding: 1em;
     font-size: 1.3em;
@@ -649,7 +649,6 @@ a:hover {
 
   .phonebox {
     flex: 1 0 auto;
-    height: 50%;
     width: 90%;
     background-image: url("img/dial.jpg");
     background-size: contain;
