@@ -1,13 +1,14 @@
 /* Reset CSS
  * --------------------------------------- */
+
  * {
-   box-sizing: border-box;
+  box-sizing: border-box;
  }
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -15,24 +16,28 @@ a {
 }
 
 img {
-    border: 0;
+  border: 0;
 }
 
 ol,ul {
-    list-style: none;
+  list-style: none;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: normal;
-    font-size: 100%;
+  font-weight: normal;
+  font-size: 100%;
 }
 
 /* Global
  * --------------------------------------- */
 
+html {
+  font-size: 16px;
+}
+
 header,
 .content {
-  font-size: 3vh;
+  font-size: 1.3em;
   font-family: 'Cuprum', sans-serif;
   color: #1a1a1a;
 }
@@ -51,7 +56,10 @@ a:hover {
  header {
    position: fixed;
    width: 100%;
-   height: 8%;
+   height: 3em;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
    border-bottom: 1px solid #1a1a1a;
    background-color: rgba(255, 255, 255, 0.5);
    z-index: 2;
@@ -59,29 +67,31 @@ a:hover {
  }
 
 .card {
-  margin-left: 2%;
-  float: left;
+  margin-left: 1em;
+  flex: 0 1 auto;
+  align-self: center;
 }
 
 .card h1 {
   font-family: 'Lobster', sans-serif;
-  font-size: 4vh;
+  font-size: 1.5em;
   border-bottom: 1px solid grey;
 }
 
 #sub {
-  font-size: 2vh;
+  font-size: 0.75em;
   text-align: center;
 }
 
 #menu {
-  float:right;
-  margin: 1.5vh 2vw;
+  flex: 0 1 auto;
+  align-self: center;
 }
 
 #menu li {
-  display:inline-block;
+  display: inline-block;
   float: left;
+  padding: 0 2em;
   border-left: 3px solid #1a1a1a;
 }
 
@@ -91,12 +101,60 @@ a:hover {
 
 #menu li a {
   display: block;
-  margin: 5px 20px 5px 20px;
+  margin: 0;
+  padding: 0;
   font-weight: bold;
 }
 
 #menu li.active a {
   color: #3399ff;
+}
+
+/* Burger
+ * --------------------------------------- */
+
+.icon {
+  flex: 0 1 auto;
+  align-self: center;
+  display: none;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+
+  .icon {
+    display: block;
+    height: 1em;
+    margin-right: 1em;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #menu.responsive {
+    display: block;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    margin: 0;
+    padding: 0.5em;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 3;
+    border: 1px solid #1a1a1a;
+  }
+  #menu.responsive li {
+    float: none;
+    display: block;
+    margin: 0.5em 0;
+    padding: 0;
+    border: 0;
+  }
+  #menu.responsive a {
+    display: block;
+    text-align: left;
+    margin: 0;
+  }
 }
 
 /* Homepage
@@ -111,40 +169,65 @@ a:hover {
 
  #section0 .content{
    position: absolute;
+   padding-top: 3em;
+   bottom: 0;
    width: 100%;
-   height: 72%;
-   top: 8%;
-   bottom: 20%;
+   height: 100%;
+   display: flex;
+   flex-flow: column;
  }
 
 .motto {
-  float: right;
-  width: 45%;
-  height: 100%;
-  padding: 10vh 0 10vh 10vh;
+  flex: 1 1 auto;
+  width: 50%;
+  align-self: flex-end;
+  padding: 2em;
   color: #ffffff;
   text-align: left;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+.skillslist {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.skillslist li {
+  margin-right: 0.75em;
 }
 
 .techlist{
-  position: absolute;
-  bottom: 0;
-  height: 20%;
+  flex: 0 0 auto;
   width: 100%;
-  padding: 1.5vw 0;
-  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 -1px 4px #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .tech {
-  float: left;
-  width: 14.28%;
-  height: 100%;
+  flex: 0 0 auto;
+  width: 3em;
+  margin: 0.25em 0.5em;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.tech:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .html5logo {
@@ -169,6 +252,13 @@ a:hover {
 
 .jquerylogo {
   background-image: url("img/jquery.svg");
+  width: 8em;
+}
+
+.jquerylogo:after {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
 }
 
 .gimplogo {
@@ -179,89 +269,238 @@ a:hover {
  * --------------------------------------- */
 
  #section1 {
-   background-color: #f4f3f1;
- }
+  background-color: #f4f3f1;
+}
 
 #section1 .content{
   position: absolute;
+  padding: 3em 0;
   bottom: 0;
   width: 100%;
-  height: 92%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
 }
 
 .cardsgallery {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60%;
-  margin-left: 5%;
+  flex: 1 0 auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-image: url(img/night.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slick-list {
+  height: 100%;
+}
+
+.slick-track {
+  height: 100%;
 }
 
 .galleryitem {
-  box-shadow: 0 2px 10px black;
-  width: 30%;
-  margin: 1vw;
-  background-color: #ffffff;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
 }
 
 .galleryitem__image {
   float: left;
-  width: 40%;
-  border-right: 1px solid #1a1a1a;
+  width: 50%;
+  height: 100%;
 }
 
-.item1 {
+.item1 .galleryitem__image{
   background-image: url("img/portfolio-personal-blog.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.item2 {
+.item2 .galleryitem__image{
   background-image: url("img/portfolio-heavy-machinery.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
-.galleryitem__image:after {
-  content: "";
-  display: block;
-  padding-bottom: 150%;
+.item3 .galleryitem__image{
+  background-image: url("img/portfolio-wine-accessories.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .galleryitem__text {
-  margin-top: 10%;
-  padding: 0 10%;
-  width: 60%;
   float: right;
+  width: 50%;
+  height: 100%;
   text-align: left;
+  padding: 2em;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .galleryitem__text a {
   color: #3399ff;
-  font-size: 2.5vh;
+  font-size: 1em;
 }
 
 .galleryitem__text h2 {
   font-family: 'Lobster', sans-serif;
-  font-size: 3vh;
+  font-size: 1.2em;
 }
 
-.coffee {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25%;
-  background-image: url("img/coffeecup.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
+.portfolio__nav {
+  flex: 0 0 auto;
+  height: 3em;
+  width: 100%;
+  border-top: 1px solid #1a1a1a;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 -1px 4px #1a1a1a;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
 }
 
-.coffee:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+/* Slick Slider
+ * --------------------------------------- */
+
+/* Navigation containers and positioning
+ * --------------------------------------- */
+
+.slick-list
+{
+    flex: 1 1 auto;
 }
+
+.slick-prev
+{
+    flex: 0 0 auto;
+    order: 1;
+}
+
+.slick-next
+{
+    flex: 0 0 auto;
+    order: 3;
+}
+
+.slick-dots
+{
+    flex: 0 1 auto;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    margin: 0 2rem;
+    list-style: none;
+}
+
+.slick-dots li
+{
+    flex: 0 1 auto;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Button styling
+ * --------------------------------------- */
+
+.slick-prev,
+.slick-next,
+.slick-dots li button
+{
+    position: relative;
+    font-size: 0;
+    line-height: 2rem;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    color: transparent;
+    outline: none;
+    background: transparent;
+    z-index: 1000;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus,
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+
+/* Button symbols
+ * --------------------------------------- */
+
+.slick-prev:before,
+.slick-next:before,
+.slick-dots li button:before
+{
+    font-family: 'FontAwesome';
+    font-size: 1.5rem;
+    line-height: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    color: #1a1a1a;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:before
+{
+    opacity: 1;
+    content: "\f053";
+}
+
+.slick-next:before
+{
+    opacity: 1;
+    content: "\f054";
+}
+
+.slick-dots li button:before
+{
+    opacity: .85;
+    content: "\f10c";
+}
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+    content: "\f111";
+}
+
+.slick-dots li.slick-active button:before
+{
+    opacity: 1;
+    content: "\f111";
+}
+
 /* Contacts
  * --------------------------------------- */
 
@@ -274,24 +513,138 @@ a:hover {
 
 #section2 .content{
   position: absolute;
+  padding-top: 3em;
   bottom: 0;
   width: 100%;
-  height: 92%;
+  height: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 }
 
 .phonebox {
-  width: 45%;
-  float: left;
+  flex: 1 1 auto;
+  width: 50%;
+  background-image: url("img/phone.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-#phone {
-  width: 100%;
-  margin-top: 17%;
+.phonebox:after {
+  content: "";
+  display: block;
+  padding-bottom: 60%;
 }
 
 .contacts {
+  flex: 1 1 auto;
   width: 50%;
-  padding: 15% 0 10% 0;
-  float: right;
-  font-size: 5vh;
+  font-size: 2em;
 }
+
+@media screen and (max-width: 750px) {
+  #section0 .content{
+    position: absolute;
+    padding-top: 3em;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .motto {
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+  }
+
+  .welcome {
+    text-align: center;
+  }
+
+  .techlist{
+    justify-content: space-around;
+  }
+
+  .tech {
+    margin: 0.25em 0.5em;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .cardsgallery {
+    flex: 1 0 auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    background-image: url(img/night.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .galleryitem {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .galleryitem__text {
+    flex: 1 0 auto;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .galleryitem__image {
+    display: none;
+  }
+
+  .item1 {
+    background-image: url("img/portfolio-personal-blog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .item2 {
+    background-image: url("img/portfolio-heavy-machinery.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .item3 {
+    background-image: url("img/portfolio-wine-accessories.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #section2 .content{
+    flex-flow: column-reverse;
+    justify-content: center;
+  }
+
+  .contacts {
+    flex: 1 0 auto;
+    height: 50%;
+    width: 100%;
+    padding: 1em;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .phonebox {
+    flex: 1 0 auto;
+    height: 50%;
+    width: 100%;
+    background-image: url("img/dial.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
