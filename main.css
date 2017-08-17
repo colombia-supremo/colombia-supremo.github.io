@@ -320,7 +320,7 @@ a:hover {
 }
 
 .item1 .galleryitem__image{
-  background-image: url("img/portfolio-personal-blog.jpg");
+  background-image: url("img/portfolio-wine-accessories.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -331,8 +331,8 @@ a:hover {
   background-repeat: no-repeat;
 }
 
-.item3 .galleryitem__image{
-  background-image: url("img/portfolio-wine-accessories.jpg");
+.item3 .galleryitem__image {
+  background-image: url("img/portfolio-personal-blog.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -508,10 +508,7 @@ a:hover {
  * --------------------------------------- */
 
  #section2 {
-   background-color: #fdfdfd;
-   background-position: left;
-   background-repeat: no-repeat;
-   background-size: contain;
+   background-color: #ffffff;
  }
 
 #section2 .content{
@@ -561,7 +558,7 @@ a:hover {
     padding: 1em;
     font-size: 1em;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .welcome {
@@ -617,7 +614,7 @@ a:hover {
   }
 
   .item1 {
-    background-image: url("img/portfolio-personal-blog.jpg");
+    background-image: url("img/portfolio-wine-accessories.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -629,7 +626,7 @@ a:hover {
   }
 
   .item3 {
-    background-image: url("img/portfolio-wine-accessories.jpg");
+    background-image: url("img/portfolio-personal-blog.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
