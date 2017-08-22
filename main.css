@@ -177,20 +177,23 @@ a:hover {
    flex-flow: column;
  }
 
-.motto {
-  flex: 1 1 auto;
-  width: 50%;
-  align-self: flex-end;
-  padding: 2em;
-  color: #ffffff;
-  text-align: left;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
+ .motto__wrapper {
+   flex: 1 1 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 50%;
+   align-self: flex-end;
+   color: #ffffff;
+   background-color: rgba(0, 0, 0, 0.8);
+ }
 
+.motto {
+  font-size: 1.5em;
+  text-align: left;
+  padding: 1em;
+}
 
 .skillslist {
   flex: 0 1 auto;
@@ -542,7 +545,7 @@ a:hover {
   font-size: 2em;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   #section0 .content{
     position: absolute;
     padding-top: 3em;
@@ -553,12 +556,8 @@ a:hover {
     flex-flow: column;
   }
 
-  .motto {
+  .motto__wrapper {
     width: 100%;
-    padding: 1em;
-    font-size: 1em;
-    align-items: center;
-    justify-content: center;
   }
 
   .welcome {
@@ -637,15 +636,14 @@ a:hover {
   }
 
   .contacts {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     width: 100%;
-    padding: 1em;
-    font-size: 1.5em;
+    font-size: 8vw;
     text-align: center;
   }
 
   .phonebox {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     width: 90%;
     background-image: url("img/dial.jpg");
     background-size: contain;
