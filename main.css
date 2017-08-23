@@ -181,7 +181,7 @@ a:hover {
    flex: 1 1 auto;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: left;
    justify-content: center;
    width: 50%;
    align-self: flex-end;
@@ -190,9 +190,8 @@ a:hover {
  }
 
 .motto {
-  font-size: 1.35em;
   text-align: left;
-  padding: 1em;
+  padding-left: 3em;
 }
 
 .skillslist {
@@ -200,9 +199,10 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   list-style-type: disc;
   list-style-position: inside;
-  justify-content: flex-start;
   width: 100%;
 }
 
@@ -558,14 +558,11 @@ a:hover {
 
   .motto__wrapper {
     width: 100%;
-  }
-
-  .welcome {
-    text-align: center;
-  }
-
-  .skillslist {
     align-items: center;
+  }
+
+  .motto {
+    padding-left: 0;
   }
 
   .techlist{
@@ -638,13 +635,13 @@ a:hover {
   .contacts {
     flex: 0 0 auto;
     width: 100%;
-    font-size: 8vw;
+    font-size: 2em;
     text-align: center;
   }
 
   .phonebox {
     flex: 0 0 auto;
-    width: 90%;
+    width: 20em;
     background-image: url("img/dial.jpg");
     background-size: contain;
     background-repeat: no-repeat;
