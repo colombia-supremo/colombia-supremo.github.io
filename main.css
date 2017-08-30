@@ -256,6 +256,10 @@ a:hover {
   background-image: url("img/javascript.svg");
 }
 
+.reactlogo {
+  background-image: url("img/react.svg");
+}
+
 .jquerylogo {
   background-image: url("img/jquery.svg");
   width: 6em;
@@ -338,6 +342,14 @@ a:hover {
   background-image: url("img/portfolio-personal-blog.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.item4 .galleryitem__image {
+  background-image: url("img/react-test-project.jpg");
+  background-color: #FFFFFF;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .galleryitem__text {
